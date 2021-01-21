@@ -1,5 +1,7 @@
 package net.liangyihui.alarmrobot.service;
 
+import net.liangyihui.alarmrobot.request.RobotRequest;
+
 import java.security.NoSuchAlgorithmException;
 
 /**
@@ -10,7 +12,7 @@ import java.security.NoSuchAlgorithmException;
 public interface RobotService {
     /**
      * 显示到钉钉群
-     * @param str 显示的字符串
+     * @param robotRequest 要显示的请求
      */
-    void DingTalkDisplay(String str) throws Exception;
+    String DingTalkDisplay(RobotRequest robotRequest) throws Exception;
 }

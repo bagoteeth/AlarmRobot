@@ -1,6 +1,8 @@
 package net.liangyihui.alarmrobot.controller;
 
+import net.liangyihui.alarmrobot.request.RobotRequest;
 import net.liangyihui.alarmrobot.service.RobotService;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +22,8 @@ public class RobotController {
     }
 
     @RequestMapping("alarm")
-    public void DingTalkDisplay(String str) throws Exception {
-        robotService.DingTalkDisplay(str);
+    public String DingTalkDisplay(@RequestBody RobotRequest robotRequest) throws Exception {
+
+        return robotService.DingTalkDisplay(robotRequest);
     }
 }
